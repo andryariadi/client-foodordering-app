@@ -19,3 +19,17 @@ model Category{
   img String
   slug String @unique
 }
+
+
+model Product{
+   id String @id @default(cuid())
+  createAt DateTime @default(now())
+  title String
+  desc String
+  img String
+  price Decimal
+  isFeatured Boolean @default(false)
+  options Json[]
+  category Category @relation(fields: [catSlug], references: [slug])
+  catSlug String
+}
