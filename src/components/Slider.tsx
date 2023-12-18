@@ -29,17 +29,17 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="flex flex-col h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] lg:flex-row bg-fuchsia-50">
-      {/* TEXT CONTAINER */}
-      <div className="flex-1 flex items-center justify-center flex-col gap-8 text-rose-600 font-bold">
-        <h1 className="text-5xl text-center uppercase p-4 md:p-10 md:text-5xl xl:text-6xl">{data[currentSlide].title}</h1>
-        <button className="bg-rose-600 text-white px-4 py-2 rounded">Order Now</button>
+    <>
+      <div className="flex flex-col lg:flex-row h-[calc(100vh-5rem)] md:h-[calc(100vh-8rem)] bg-fuchsia-50">
+        <div className="flex flex-1 flex-col gap-8 justify-center items-center text-rose-600 font-bold ">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl text-center p-4 md:10 uppercase">{data[currentSlide].title}</h1>
+          <button className="text-rose-600 px-4 py-2 rounded border-rose-600 border-2 hover:text-white hover:bg-rose-600 transition-all duration-500">Order Now</button>
+        </div>
+        <div className="flex-1 relative w-full">
+          <Image src={data[currentSlide].image} alt="hero" fill className="object-cover" />
+        </div>
       </div>
-      {/* IMAGE CONTAINER */}
-      <div className="w-full flex-1 relative">
-        <Image src={data[currentSlide].image} alt="" fill className="object-cover" />
-      </div>
-    </div>
+    </>
   );
 };
 
