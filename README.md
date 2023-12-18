@@ -32,3 +32,36 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+model Category{
+id String @id @default(cuid())
+createAt DateTime @default(now())
+title String
+desc String
+color String
+img String
+slug String @unique
+products Product[]
+}
+
+model Product{
+id String @id @default(cuid())
+createAt DateTime @default(now())
+title String
+desc String
+img String?
+price Decimal
+isFeatured Boolean @default(false)
+options Json[]
+category Category @relation(fields: [catSlug], references: [slug])
+catSlug String
+}
+
+model Order{
+id String @id @default(cuid())
+createAt DateTime @default(now())
+price Decimal
+products Json[]
+status String
+intent_id String? @unique
+}
