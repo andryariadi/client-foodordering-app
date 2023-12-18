@@ -46,3 +46,25 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
   border: 7px solid #232e33;
 }
+
+.cart-container {
+  --sb-track-color: #232e33;
+  --sb-thumb-color: #e11e48;
+  --sb-size: 10px;
+
+  scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+}
+
+.cart-container::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.cart-container::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 10px;
+}
+
+.cart-container::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 10px;
+}
