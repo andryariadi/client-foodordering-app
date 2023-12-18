@@ -1,10 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Notification = () => {
-  return (
-    <div className='h-12 bg-red-500 text-white px-4 flex items-center justify-center text-center text-sm md:text-base cursor-pointer'>Free delivery for all orders over $50. Order your food now!
-    </div>
-  )
-}
+  return <div className="h-12 bg-rose-600 text-amber-400 px-4 flex items-center justify-center text-center text-sm md:text-base cursor-pointer">Free delivery for all orders over $50. Order your food now !</div>;
+};
 
-export default Notification
+export default Notification;
