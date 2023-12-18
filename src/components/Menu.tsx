@@ -37,18 +37,11 @@ const Menu = () => {
           onClick={() => setOpen(false)}
         />
       )} */}
-      
+
       {/* SHORTCUT */}
-      <Image
-        src={open ? "/close.png" : "/open.png"}
-        alt=""
-        width={20}
-        height={20}
-        onClick={() => setOpen(!open)}
-        className="cursor-pointer"
-      />
+      <Image src={open ? "/close.png" : "/open.png"} alt="" width={20} height={20} onClick={() => setOpen(!open)} className="cursor-pointer" />
       {open && (
-        <div className="bg-red-500 text-white absolute left-0 top-24 w-full h-[calc(100vh-6rem)] flex flex-col gap-8 items-center justify-center text-3xl z-10">
+        <div className="bg-rose-600 text-white absolute left-0 top-32 w-full h-[calc(100vh-6rem)] flex flex-col gap-8 items-center justify-center text-2xl z-10">
           {links.map((item) => (
             <Link href={item.url} key={item.id} onClick={() => setOpen(false)}>
               {item.title}
@@ -67,10 +60,7 @@ const Menu = () => {
           )} */}
 
           {/* SHORTCUT */}
-          <Link
-            href={user ? "/orders" : "login"}
-            onClick={() => setOpen(false)}
-          >
+          <Link href={user ? "/orders" : "login"} onClick={() => setOpen(false)}>
             {user ? "Orders" : "Login"}
           </Link>
           <Link href="/cart" onClick={() => setOpen(false)}>

@@ -40,7 +40,7 @@ const CountDown = () => {
     };
   });
   return (
-    <span className="font-bold text-5xl text-amber-400">
+    <span className="font-bold text-5xl text-amber-500">
       {d}:{h}:{m}:{s}
     </span>
   );
