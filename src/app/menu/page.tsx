@@ -4,22 +4,19 @@ import React from "react";
 
 const MenuPage = () => {
   return (
-    <div className="p-4 lg:px-20 xl:px-40 h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex flex-col md:flex-row items-center">
-      {menu.map((category) => (
-        <Link
-          href={`/menu/${category.slug}`}
-          key={category.id}
-          className="w-full h-1/3 bg-cover p-8 md:h-1/2"
-          style={{ backgroundImage: `url(${category.img})` }}
-        >
-          <div className={`text-${category.color} w-1/2`}>
-            <h1 className="uppercase font-bold text-3xl">{category.title}</h1>
-            <p className="text-sm my-8">{category.desc}</p>
-            <button className={`hidden 2xl:block bg-${category.color} text-${category.color === "black" ? "white" : "red-500"} py-2 px-4 rounded-md`}>Explore</button>
-          </div>
-        </Link>
-      ))}
-    </div>
+    <>
+      <div className="p-4 md:px-20 xl:px-40 h-[calc(100vh-7rem)] flex flex-col md:flex-row items-center mb-44 md:mb-0">
+        {menu.map((item) => (
+          <Link href={`/menu/${item.slug}`} key={item.id} style={{ backgroundImage: `url(${item.img})` }} className="w-full h-1/2 md:h-5/6 bg-cover bg-center p-8">
+            <div className={`text-${item.color} w-1/2 h-full justify-evenly flex flex-col`}>
+              <h1 className="text-2xl md:text-3xl font-bold uppercase">{item.title}</h1>
+              <p className="text-sm my-3">{item.desc}</p>
+              <button className={`hidden 2xl:block py-2 px-4 w-1/2 rounded-md bg-amber-500 text-white`}>Explore</button>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </>
   );
 };
 
